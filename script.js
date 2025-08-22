@@ -53,7 +53,7 @@
       els.cityResult.innerHTML = renderWeather(data, `Weather for "${city}"`);
      
     } catch (err) {
-      els.cityResult.innerHTML = `❌ Could not load city weather (${err.message}).`;
+      els.cityResult.innerHTML = ` Could not load city weather (${err.message}).`;
     }
   }
 
@@ -63,7 +63,7 @@
 
   function getGPSWeather() {
     if (!("geolocation" in navigator)) {
-      els.gpsResult.innerHTML = "⚠️ Geolocation not supported in this browser.";
+      els.gpsResult.innerHTML = " Geolocation not supported in this browser.";
       return;
     }
     navigator.geolocation.getCurrentPosition(async (pos) => {
@@ -75,14 +75,14 @@
         els.currentLocation.textContent = `${data.name}, ${data.sys?.country || ""}`;
         els.gpsResult.innerHTML = renderWeather(data, "Weather at My Location");
       } catch (err) {
-        els.gpsResult.innerHTML = `❌ Could not load location weather (${err.message}).`;
+        els.gpsResult.innerHTML = ` Could not load location weather (${err.message}).`;
       }
     }, (err) => {
       let msg = "Unable to get location.";
       if (err.code === 1) msg = "Permission denied. Allow location access.";
       if (err.code === 2) msg = "Position unavailable.";
       if (err.code === 3) msg = "Location request timed out.";
-      els.gpsResult.innerHTML = `⚠️ ${msg}`;
+      els.gpsResult.innerHTML = ` ${msg}`;
     });
   }
 
