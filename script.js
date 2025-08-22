@@ -1,8 +1,7 @@
 (() => {
-  // 1) Put your OpenWeather key here
+
   const API_KEY = "7e7b90789275f8f6e8dd95cfa2e2a5ec";
 
-  // 2) Grab elements
   const els = {
     themeToggle: document.getElementById("themeToggle"),
     currentLocation: document.getElementById("currentLocation"),
@@ -15,7 +14,7 @@
     secureNote: document.getElementById("secureNote"),
   };
 
-  // 3) THEME (Dark/Light) with persistence
+ 
   const saved = localStorage.getItem("theme") || "light";
   if (saved === "dark") document.body.classList.add("dark");
   setThemeButtonText();
@@ -32,7 +31,7 @@
       : "🌙 Dark Mode";
   }
 
-  // 4) Search by city (independent from GPS)
+
   els.searchBtn.addEventListener("click", () => {
     const city = els.cityInput.value.trim();
     if (!city) {
@@ -52,13 +51,13 @@
         `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric`;
       const data = await fetchJSON(url);
       els.cityResult.innerHTML = renderWeather(data, `Weather for "${city}"`);
-      // DO NOT touch the top location bar
+     
     } catch (err) {
       els.cityResult.innerHTML = `❌ Could not load city weather (${err.message}).`;
     }
   }
 
-  // 5) GPS weather (updates top bar + gps card only)
+
   els.useLocationBtn.addEventListener("click", getGPSWeather);
   els.refreshLocation.addEventListener("click", getGPSWeather);
 
