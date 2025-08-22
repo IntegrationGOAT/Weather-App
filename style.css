@@ -1,0 +1,81 @@
+/* Theme tokens */
+:root {
+  --bg1: #f4f7fb;
+  --bg2: #e9eef7;
+  --text: #0d141c;
+  --card: #ffffff;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-contrast: #ffffff;
+  --outline: #cbd5e1;
+  --result: rgba(0,0,0,0.04);
+}
+
+body.dark {
+  --bg1: #0e1624;
+  --bg2: #0b1320;
+  --text: #e6eefc;
+  --card: #111827;
+  --muted: #93a3b8;
+  --accent: #38bdf8;
+  --accent-contrast: #0b1320;
+  --outline: #324055;
+  --result: rgba(255,255,255,0.06);
+}
+
+/* Base */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+}
+
+/* Layout */
+.container { max-width: 960px; margin: 16px auto; padding: 0 16px; }
+.row { display: flex; align-items: center; gap: 12px; justify-content: space-between; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+
+h1 { font-size: 2rem; margin: 8px 0; }
+h2 { margin: 0 0 8px 0; }
+.emoji { margin-left: 8px; }
+
+/* UI */
+.pill { background: var(--card); border: 1px solid var(--outline); border-radius: 999px; padding: 8px 12px; }
+.card { background: var(--card); border: 1px solid var(--outline); border-radius: 16px; padding: 16px; }
+.result { margin-top: 12px; padding: 12px; border-radius: 12px; background: var(--result); border: 1px dashed var(--outline); min-height: 48px; }
+
+/* Inputs & Buttons */
+input[type="text"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 12px;
+  border: 1px solid var(--outline);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .2s, transform .05s;
+}
+.btn:hover { opacity: .9; }
+.btn:active { transform: translateY(1px); }
+
+.btn.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--outline);
+}
+
+/* Footer hint */
+.note { opacity: .8; font-size: .9rem; }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Weather App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="container row">
+    <h1>Weather App <span class="emoji">⛅⚡</span></h1>
+    <button id="themeToggle" class="btn">🌙 Dark Mode</button>
+  </header>
+
+  <!-- Current Location Bar (only GPS updates this) -->
+  <section class="container row pill" id="locationBox">
+    <div>📍 <span id="currentLocation">Not detected</span></div>
+    <button id="refreshLocation" class="btn btn-outline">Refresh</button>
+  </section>
+
+  <main class="container grid">
+    <!-- City Search (independent) -->
+    <section class="card">
+      <h2>Search City</h2>
+      <div class="row">
+        <input id="cityInput" type="text" placeholder="Enter city name"/>
+        <button id="searchBtn" class="btn">Search</button>
+      </div>
+      <div id="cityResult" class="result">No city searched yet.</div>
+    </section>
+
+    <!-- GPS Weather (independent) -->
+    <section class="card">
+      <h2>My Location</h2>
+      <button id="useLocationBtn" class="btn btn-outline">📡 Use My Location</button>
+      <div id="gpsResult" class="result">Not loaded yet.</div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container row footer">
+    <p>Devoloped by Cyber_phantom</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
