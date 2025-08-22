@@ -1,4 +1,4 @@
-/* Theme tokens */
+
 :root {
   --bg1: #f4f7fb;
   --bg2: #e9eef7;
@@ -23,7 +23,7 @@ body.dark {
   --result: rgba(255,255,255,0.06);
 }
 
-/* Base */
+
 html, body { height: 100%; }
 body {
   margin: 0;
@@ -32,7 +32,7 @@ body {
   background: linear-gradient(135deg, var(--bg1), var(--bg2));
 }
 
-/* Layout */
+
 .container { max-width: 960px; margin: 16px auto; padding: 0 16px; }
 .row { display: flex; align-items: center; gap: 12px; justify-content: space-between; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
@@ -41,12 +41,12 @@ h1 { font-size: 2rem; margin: 8px 0; }
 h2 { margin: 0 0 8px 0; }
 .emoji { margin-left: 8px; }
 
-/* UI */
+
 .pill { background: var(--card); border: 1px solid var(--outline); border-radius: 999px; padding: 8px 12px; }
 .card { background: var(--card); border: 1px solid var(--outline); border-radius: 16px; padding: 16px; }
 .result { margin-top: 12px; padding: 12px; border-radius: 12px; background: var(--result); border: 1px dashed var(--outline); min-height: 48px; }
 
-/* Inputs & Buttons */
+
 input[type="text"] {
   flex: 1;
   min-width: 200px;
@@ -77,5 +77,4 @@ input[type="text"] {
   border: 1px solid var(--outline);
 }
 
-/* Footer hint */
 .note { opacity: .8; font-size: .9rem; }
