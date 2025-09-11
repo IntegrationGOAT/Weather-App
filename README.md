@@ -15,7 +15,7 @@ It allows users to search for weather in any city or fetch the weather for their
 
 ## Tech Stack
 - **Frontend:** HTML5, CSS3, JavaScript  
-- **APIs:** (OpenWeatherMap)  
+- **API:** (OpenWeatherMap)  
 - **Hosting:** GitHub Pages 
 
 ---
